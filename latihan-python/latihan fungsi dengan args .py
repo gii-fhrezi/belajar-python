@@ -61,10 +61,95 @@ def gabung_kata(*args):
     return kalimat.strip()
 print(gabung_kata("halo","nama","saya","irgi"))
 
-def gabung_kata(*args):
-    hasil = ""
-    for kata in args:
-        hasil += kata + " "
-    return hasil.strip()
+'''
+Buat fungsi bernama jumlahkan_semua yang menerima banyak angka dengan *args,
+ lalu mengembalikan hasil penjumlahannya.
+Contoh pemanggilan:
 
-print(gabung_kata("Halo", "nama", "saya", "Irgi"))
+print(jumlahkan_semua(2, 3, 5, 7))
+'''
+
+def jumlahkan_semua(*args):
+    hasil = 0
+    for angka in args:
+        hasil += angka
+    print(hasil)
+jumlahkan_semua(2,3,5,7)
+
+'''
+Buat fungsi bernama kali_semua yang menerima banyak angka dengan *args,
+lalu mengembalikan hasil perkaliannya.
+Contoh pemanggilan:
+
+print(kali_semua(2, 3, 4))
+'''
+
+def kali_semua(*args):
+    total = 1
+    for angka in args:
+        total *= angka
+    return total
+        
+print(kali_semua(2,3,4))
+
+'''
+Buat fungsi cari_maksimum yang menerima banyak angka dengan *args,
+ lalu mengembalikan angka yang paling besar.
+Contoh:
+
+print(cari_maksimum(2, 10, 3, 8, 7))
+'''
+
+def cari_maksimum(*args):
+    maksimum = args[0]
+    for angka in args:
+        if angka >= maksimum:
+            maksimum = angka
+    print(f"angka terbesar adalah {maksimum}")
+
+cari_maksimum(34,8,90,12)
+
+'''
+====penjelasan====
+✅ Penjelasan singkat:
+
+args[0] → digunakan sebagai nilai awal (sementara dianggap terbesar).
+for angka in args: → loop untuk memeriksa semua angka yang dimasukkan.
+if angka > terbesar: → kalau ketemu angka yang lebih besar, nilai terbesar diganti.
+Setelah loop selesai → variabel terbesar menyimpan angka paling besar.
+
+📌 Output dari kode di atas adalah:
+
+angka terbesar adalah 22
+'''
+
+'''
+sekarang buat yg versi terkecilnya
+'''
+
+def cari_terkecil(*args):
+    terkecil = args[0]   # ambil angka pertama sebagai pembanding awal
+    for angka in args:
+        if angka < terkecil:
+            terkecil = angka
+    print(f'angka terkecil adalah {terkecil}')
+
+cari_terkecil(10, 5, 22, 7, 13)
+
+'''
+contoh soal gabung kata string
+'''
+
+def gabung_kata(*args):
+    kata = ''
+    for kalimat in args:
+        kata += kalimat + ' '
+    return kata.strip()
+print (gabung_kata('irgi','achmad','fahrezi'))    
+
+def gabung_kata(*args):
+    kata = ''
+    for kalimat in args:
+        kata += kalimat + ' '
+    return kata.strip()
+print(gabung_kata('aksel','raynand'))
