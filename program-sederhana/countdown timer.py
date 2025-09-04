@@ -1,26 +1,23 @@
 import os
 import time
+
 os.system('cls')
 
 def countdown():
-    detik = int(input("masukkan durasi dalam format detik  =" ))# karena hasil input berupa str maka perlu diubah menjadi int
-    print("hitung mundur dimulai dari sekarang....")
-    temp =  detik
-    while temp != 0 : # selama detik tidak sama dengan 0
-        print('\b' * len(str(temp)), end='')
-        time.sleep(1)
-        temp -= 1
-        print(temp,end='')
-    print(f'\nhitung mundur sudah berakhir....\n')
-
-print('===== SELAMAT DATANG DI PROGRAM HITUNG MUNDUR =====')
+    waktu = int(input('masukkan durasi dalam format detik = '))
+    print('memulai hitung mundur!')
+    while waktu >= 0:
+        print(f'\r{waktu}', end=' detik',flush=True)
+        time.sleep(1)# durasi program terjeda = 1 detik
+        waktu -= 1
+    print('\nhitung mundur sudah selesai!\n')
 
 while True:
-    pilihan = input('apakah anda ingin menggunakan program ini? (y/n)  = ')
-    if pilihan == 'y':
+    perintah = input('apakah anda ingin menggunakan program ini? (y/n)')
+    if perintah == 'y':
         countdown()
-    elif pilihan == 'n':
-        print("program telah berhenti, terima kasih telah menggunakan program ini!!")
+    elif perintah == 'n':
+        print('program telah berhenti!!')
         break
     else:
-        print("perintah yang anda masukkan tidak valid!!")
+        print('perintah yang anda gunakan salah!!')
